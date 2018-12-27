@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import { IconFont } from './statics/incofont/iconfont';
 
 export const GlobalStyle = createGlobalStyle`
   html, body, div, span, applet, object, iframe,
@@ -54,4 +55,6 @@ export const GlobalStyle = createGlobalStyle`
     border-collapse: collapse;
     border-spacing: 0;
   }
-`
+`;
+
+export const GlobalIconFont = IconFont;

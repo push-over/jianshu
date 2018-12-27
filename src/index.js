@@ -2,12 +2,13 @@ import React, { Fragment } from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 
-import { GlobalStyle } from './style';
+import { GlobalStyle, GlobalIconFont } from './style';
 
 const Jianshu = (
     <Fragment>
-        <GlobalStyle />
         <App />
+        <GlobalStyle />
+        <GlobalIconFont />
     </Fragment>
 );
 
