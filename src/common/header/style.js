@@ -45,12 +45,16 @@ export const NavItem = styled.div`
     &.active {
         color: #ea6f5a;
     }
+    &.app-download:hover {
+        background: hsl(0, 0%, 96%);
+    }   
 `;
 
 export const SearchWrapper = styled.div`
     position: relative;
     float: left; 
     .iconfont {
+        cursor: pointer;
         position: absolute;
         right: 5px;
         bottom: 4px
@@ -103,6 +107,60 @@ export const NavSearch = styled.input.attrs({
     }
 `;
 
+export const SearchInfo = styled.div`
+    position: absolute;
+    left: 20px;
+    top: 56px;
+    width: 250px;
+    padding: 0 20px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, .2);
+    &::before {
+        content: "";
+        left: 27px;
+        width: 20px;
+        height: 20px;
+        transform: rotate(45deg);
+        position: absolute;
+        background-color: #fff;
+        top: -5px;
+    }
+`;
+
+export const SearchInfoTitle = styled.div`
+    margin-top: 20px;
+    margin-bottom: 15px;
+    line-height: 20px;
+    color: #969696;
+    font-size: 14px;
+`;
+
+export const SearchInfoSwitch = styled.span`
+    float: right;
+    font-size: 13px;
+    cursor: pointer;
+`;
+
+export const SearchInfoList = styled.div`
+    overflow: hidden;
+`;
+
+export const SearchInfoItem = styled.a`
+    display: block;
+    line-height: 20px;
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 12px;
+    padding: 0 5px;
+    font-size: 12px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    border-radius: 3px;
+    color: #787878;
+    cursor: pointer;
+`;
+
 export const Addition = styled.div`
     position: absolute;
     right: 0;
@@ -124,8 +182,15 @@ export const Button = styled.div`
         color: #fff;
         background: #ea6f5a;
     }
+    &.write:hover {
+        background-color: #ec6149;
+    }
     &.sign-up {
         color: #ea6f5a;
         border: 1px solid rgba(236,97,73,.7);
+    }
+    &.sign-up:hover {
+        color: #ec6149;
+        background-color: rgba(236,97,73,.05)
     }
 `;
