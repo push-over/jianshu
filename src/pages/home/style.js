@@ -1,31 +1,31 @@
 import styled from 'styled-components';
 
-export const HomeWrapper = styled.div`
+export const HomeWrapper = styled.div `
     width: 960px;
     overflow: hidden;
     margin: 0 auto;
 `;
 
-export const HomeLeft = styled.div`
+export const HomeLeft = styled.div `
     float: left;
     width: 625px;
     margin-top: 30px;
     margin-left: 15px;
 `;
 
-export const HomeRight = styled.div`
+export const HomeRight = styled.div `
     float: right;
-    width: 240px;
+    width: 280px;
     margin-top: 30px;
 `;
 
-export const TopicWrapper = styled.div`
+export const TopicWrapper = styled.div `
     overflow: hidden;
     padding: 20px 0 10px 0;
     margin-left: -18px;
 `;
 
-export const TopicItem = styled.div`
+export const TopicItem = styled.div `
     float: left;
     height: 32px;
     line-height: 32px;
@@ -46,77 +46,71 @@ export const TopicItem = styled.div`
     }
 `;
 
-// export const BannerWrapper = styled.div`
-//     position: relative;
-//     overflow: hidden;
-//     width: 625px;
-//     height: 270px;
-//     background: pink;
-//     border-radius: 5px;
-// `;
+export const BannerWrapper = styled.div `
+    position: relative;
+    overflow: hidden;
+    width: 625px;
+    height: 270px;
+    border-radius: 5px;
+    background: pink;
+    margin-bottom: 30px;
+    .ant-carousel .slick-slide {
+        text-align: center;
+        height: 100%;
+        overflow: hidden;
+    }
+`;
 
-// export const BannerArrows = styled.div`
-//     position: absolute;
-//     width: 625px;
-//     height: 50px;
-//     top: 110px;
-// `;
+export const ListItem = styled.div `
+    overflow: hidden;
+    padding: 20px 0;
+    border-top: 1px solid #dcdcdc;
+    .pic {
+        display: block;
+        width: 150px;
+        height: 100px;
+        float: right;
+    }
+`;
 
-// export const BannerControl = styled.span`
-//     width: 40px;
-//     height: 50px;
-//     background: green;
-//     line-height: 50px;
-//     text-align: center;
-//     color: #fff;
-//     background-color: rgba(0,0,0,.4);
-//     cursor: pointer;    
-//     &.left {
-//         float: left;
-//         border-top-right-radius: 6px;
-//         border-bottom-right-radius: 6px;
-//     }
-//     &.right {
-//         float: right;
-//         border-top-left-radius: 6px;
-//         border-bottom-left-radius: 6px;
-//     }
-// `;
+export const ListInfo = styled.div `
+    width: 460px;
+    float: left;
+    .title {
+        font-size: 18px;
+        font-weight: bold;
+        line-height: 27px;
+        color: #333;
+    }
+    .desc {
+        font-size: 13px;
+        line-height: 24px;
+        color: #999;
+    }
+    .meta {
+        margin-top: 10px;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 20px;
+    }
+    .meta-info {
+        margin-right: 10px;
+        color: #b4b4b4;
+        cursor: pointer;
+    }
+`;
 
-// export const BannerImage = styled.ul`
-//     width: 6000px;
-//     height: 100%;
-//     transtion: all 2s;
-// `; 
+export const RecommendWrapper = styled.div`
+    width: 100%;
+    margin-top: -4px;
+`;
 
-// export const BannerImageItem = styled.li`
-//     width: 625px;
-//     float: left;  
-//     img {
-//         width: 100%;
-//     }
-// `;
-
-// export const BannerIndicators = styled.ol`
-//     width: 80%;
-//     height: 20px;
-//     left: 40%;
-//     bottom: 8px;
-//     position: absolute; 
-//     margin-left: -30%;
-//     padding-left: 0;
-//     text-align: center;
-// `;
-
-// export const BannerIndicatorsItem = styled.li`
-//     width: 25px;
-//     height: 2px;
-//     background-color: hsla(0,0%,47%,.4);
-//     border-radius: 10px;
-//     display: inline-block;
-//     margin: 3px;
-//     cursor: pointer;
-//     &.active {
-//         background-color: red;
-//     }
-// `;
+export const RecommendItem = styled.div`
+    width: 100%;
+    height: 50px;
+    background: url(${(props) => props.imgUrl});
+    background-size: contain;
+    margin-bottom: 6px;
+    border-radius: 4px;
+    cursor: pointer;
+`;
