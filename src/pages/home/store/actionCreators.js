@@ -15,6 +15,11 @@ const addHomeList = (result,nextPage) => ({
     nextPage
 });
 
+export const toggleTopShow = (show) => ({
+    type: constants.TOGGLE_TOP_SHOW,
+    show
+})
+
 export const getHomeInfo = () => {
     return (dispatch) => {
         axios.get('/api/home.json').then((res) => {

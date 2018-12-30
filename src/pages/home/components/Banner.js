@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import Carousel from 'antd/lib/carousel';
 import {
     BannerWrapper
 } from '../style';
 
-class Banner extends Component {
+class Banner extends PureComponent {
     render() {
         return (
             <BannerWrapper>

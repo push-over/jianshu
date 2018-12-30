@@ -1,9 +1,10 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import Banner from './components/Banner';
 import List from './components/List';
 import Topic from './components/Topic';
 import Recommend from './components/Recommend';
 import Writer from './components/Writer';
+import BackTop from './components/BackTop';
 import { connect } from 'react-redux';
 import { actionCreators } from './store';
 
@@ -13,7 +14,7 @@ import {
     HomeRight,
 } from './style';
 
-class Home extends Component {
+class Home extends PureComponent {
     render() {
         return (
             <HomeWrapper>
@@ -26,6 +27,7 @@ class Home extends Component {
                     <Recommend />
                     <Writer />
                 </HomeRight>
+                <BackTop />
             </HomeWrapper>
         )
     }
