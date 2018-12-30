@@ -2,7 +2,12 @@ import styled from 'styled-components';
 import logo from '../../statics/nav-logo.png';
 
 export const HeaderWrapper = styled.div`
-    position: relative;
+    position: fixed;
+    z-index: 9999;
+    background: #fff;
+    top: 0px;
+    left: 0px;
+    right: 0px;
     height: 56px;
     border-bottom: 1px solid #f0f0f0;
     box-sizing: border-box;
@@ -12,8 +17,9 @@ export const Logo = styled.a.attrs({
     href: '/'
 })`
     position: absolute;
+    float: right;
     top: 0;
-    left: 0;
+    left: -155px;
     display: block;
     width: 100px;
     height: 56px;
@@ -27,6 +33,7 @@ export const Nav = styled.div`
     margin: 0 auto;
     padding-right: 70px;
     box-sizing: border-box;
+    position: relative;
 `;
 
 export const NavItem = styled.div`
@@ -39,6 +46,7 @@ export const NavItem = styled.div`
         float: left;
     }
     &.right {
+        font-size: 15px;
         float: right;
         color: #969696;
     }
@@ -165,22 +173,25 @@ export const SearchInfoItem = styled.a`
 
 export const Addition = styled.div`
     position: absolute;
-    right: 0;
+    right: -160px;
     top: 0;
     height: 56px;
 `;
 
 export const Button = styled.div`
     float: right;
-    margin-top: 9px;
     margin-right: 20px;
-    padding: 0 20px;
-    line-height: 38px;
     border-radius: 19px;
     font-size: 15px;
     cursor: pointer;
     border: 1px solid transparent;
+    text-align: center;
+    line-height: 24px;
     &.write {
+        margin-top: 8px;
+        line-height: 36px;
+        height: 40px;
+        width: 100px;
         color: #fff;
         background: #ea6f5a;
     }
@@ -188,6 +199,10 @@ export const Button = styled.div`
         background-color: #ec6149;
     }
     &.sign-up {
+        margin-top: 9px;
+        line-height: 38px;
+        height: 38px;
+        width: 80px;
         color: #ea6f5a;
         border: 1px solid rgba(236,97,73,.7);
     }

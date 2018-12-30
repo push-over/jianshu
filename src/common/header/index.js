@@ -24,8 +24,8 @@ class Header extends Component {
         const { focused, list, handleInputFocus, handleInputBlur } = this.props;
         return (
             <HeaderWrapper>
-                <Logo />
                 <Nav>
+                <Logo />
                     <NavItem className='left active'>首页</NavItem>
                     <NavItem className='left app-download'>下载App</NavItem>
                     <NavItem className='right'>登录</NavItem>
