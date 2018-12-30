@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Banner from './components/Banner';
 import List from './components/List';
+import Topic from './components/Topic';
 import Recommend from './components/Recommend';
 import Writer from './components/Writer';
 import { connect } from 'react-redux';
@@ -18,6 +19,7 @@ class Home extends Component {
             <HomeWrapper>
                 <HomeLeft>
                     <Banner />
+                    <Topic />
                     <List />
                 </HomeLeft>
                 <HomeRight>

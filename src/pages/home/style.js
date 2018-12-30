@@ -23,6 +23,7 @@ export const TopicWrapper = styled.div `
     overflow: hidden;
     padding: 20px 0 10px 0;
     margin-left: -18px;
+    border-bottom: 1px solid #dcdcdc;
 `;
 
 export const TopicItem = styled.div `
@@ -52,7 +53,6 @@ export const BannerWrapper = styled.div `
     width: 625px;
     height: 270px;
     border-radius: 5px;
-    background: pink;
     margin-bottom: 30px;
     .ant-carousel .slick-slide {
         text-align: center;
@@ -64,12 +64,13 @@ export const BannerWrapper = styled.div `
 export const ListItem = styled.div `
     overflow: hidden;
     padding: 20px 0;
-    border-top: 1px solid #dcdcdc;
+    border-bottom: 1px solid #dcdcdc;
     .pic {
         display: block;
         width: 150px;
         height: 100px;
         float: right;
+        cursor: pointer;
     }
 `;
 
@@ -81,6 +82,7 @@ export const ListInfo = styled.div `
         font-weight: bold;
         line-height: 27px;
         color: #333;
+        cursor: pointer;
     }
     .desc {
         font-size: 13px;
@@ -113,4 +115,20 @@ export const RecommendItem = styled.div `
     margin-bottom: 6px;
     border-radius: 4px;
     cursor: pointer;
+`;
+
+export const LoadMore = styled.div `
+    width: 100%;
+    height: 40px;
+    background: #a5a5a5;
+    border-radius: 20px;
+    margin: 30px auto 60px;
+    text-align: center;
+    padding: 10px 15px;
+    color: #fff;
+    font-size: 15px;
+    cursor: pointer;
+    &.load-more:hover {
+        background-color: #9b9b9b;
+    }  
 `;
