@@ -13,7 +13,7 @@ class Recommend extends Component {
       <RecommendWrapper>
         {
           list.map((item) => {
-              return  <RecommendItem key={item.get('id')} imgUrl={item.get('imgUrl')} />
+            return <RecommendItem key={item.get('id')} imgUrl={item.get('imgUrl')} />
           })
         }
       </RecommendWrapper>
@@ -23,8 +23,8 @@ class Recommend extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    list: state.getIn(['home','recommendList'])
+    list: state.getIn(['home', 'recommendList'])
   }
 }
 
-export default connect(mapStateToProps,null)(Recommend);
+export default connect(mapStateToProps, null)(Recommend);

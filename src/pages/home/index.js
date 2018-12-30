@@ -4,8 +4,7 @@ import List from './components/List';
 import Recommend from './components/Recommend';
 import Writer from './components/Writer';
 import { connect } from 'react-redux';
-import { constants } from './store';
-import axios from 'axios';
+import { actionCreators } from './store';
 
 import {
     HomeWrapper,
@@ -30,26 +29,16 @@ class Home extends Component {
     }
 
     componentDidMount() {
-        axios.get('/api/home.json').then((res) => {
-            const result = res.data.data;
-            const action = {
-                type: constants.CHANGE_HOME_DATA,
-                bannerList: result.bannerList,
-                articleList: result.articleList,
-                recommendList: result.recommendList
-            }
-
-            this.props.changeHomeData(action);
-        })
-      }
+        this.props.changeHomeData();
+    }
 }
 
 const mapDispatchProps = (dispatch) => {
     return {
-        changeHomeData(action) {
-            dispatch(action);
+        changeHomeData() {
+            dispatch(actionCreators.getHomeInfo());
         }
     }
-} 
+}
 
-export default connect(null,mapDispatchProps)(Home);
+export default connect(null, mapDispatchProps)(Home);

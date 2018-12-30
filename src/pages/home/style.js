@@ -100,12 +100,12 @@ export const ListInfo = styled.div `
     }
 `;
 
-export const RecommendWrapper = styled.div`
+export const RecommendWrapper = styled.div `
     width: 100%;
     margin-top: -4px;
 `;
 
-export const RecommendItem = styled.div`
+export const RecommendItem = styled.div `
     width: 100%;
     height: 50px;
     background: url(${(props) => props.imgUrl});

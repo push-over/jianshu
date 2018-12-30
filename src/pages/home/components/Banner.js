@@ -9,12 +9,10 @@ class Banner extends Component {
     render() {
         return (
             <BannerWrapper>
-                <Carousel 
-                    autoplay
-                >
+                <Carousel autoplay>
                     {
                         this.props.list.map((item) => {
-                            return <img key={item.get('id')} src={item.get('imgUrl')} alt=''/>
+                            return <img key={item.get('id')} src={item.get('imgUrl')} alt='' />
                         })
                     }
                 </Carousel>
@@ -30,10 +28,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-
-    }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Banner);
+export default connect(mapStateToProps, null)(Banner);
