@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-// import { actionCreators } from '../store';
 import Carousel from 'antd/lib/carousel';
 import {
     BannerWrapper
@@ -27,14 +26,14 @@ class Banner extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        list: state.getIn(['home', 'list']),
+        list: state.getIn(['home', 'bannerList']),
     }
 }
 
-const mapDispathToProps = (dispatch) => {
+const mapDispatchToProps = (dispatch) => {
     return {
-        
+
     }
 }
 
-export default connect(mapStateToProps, mapDispathToProps)(Banner);
+export default connect(mapStateToProps, mapDispatchToProps)(Banner);

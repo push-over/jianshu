@@ -1,0 +1,53 @@
+{
+    "success": true,
+    "data": {
+        "bannerList": [{
+                "id": 1,
+                "imgUrl": "//upload.jianshu.io/admin_banners/web_images/4593/fa5490809ff3344c5aa72312aa1e05921be77222.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/1250/h/540"
+            },
+            {
+                "id": 2,
+                "imgUrl": "//upload.jianshu.io/admin_banners/web_images/4590/7f1edd154f90446a038d6ecd10bebf6e8929fbf5.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/1250/h/540"
+            },
+            {
+                "id": 3,
+                "imgUrl": "//upload.jianshu.io/admin_banners/web_images/4591/30f6c3d080ff9d9610d745bd777b1c0ebba3e183.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/1250/h/540"
+            }
+        ],
+        "articleList": [{
+                "id": 1,
+                "title": "​普通程序员的一天是这样度过的，平凡的一天！",
+                "desc": "很多其他行业的人和在校计算机系的学生都对程序员的工作充满了好奇。不知道他们一天的工作是怎么样的。其实除了一些互联网公司奉行的996模式（早上九点...",
+                "imgUrl": "//upload-images.jianshu.io/upload_images/14212122-570231c813e761e5?imageMogr2/auto-orient/strip|imageView2/1/w/360/h/240"
+            },
+            {
+                "id": 2,
+                "title": "​金正恩：如何用7年时间，体面又有尊严地完成了祖辈父辈70年都未竟的事业",
+                "desc": "很多其他行业的人和在校计算机系的学生都对程序员的工作充满了好奇。不知道他们一天的工作是怎么样的。其实除了一些互联网公司奉行的996模式（早上九点...",
+                "imgUrl": "//upload-images.jianshu.io/upload_images/11266166-e4b39b47e9a5c94c?imageMogr2/auto-orient/strip|imageView2/1/w/360/h/240"
+            }
+        ],
+        "recommendList": [{
+                "id": 1,
+                "imgUrl": "http://cdn2.jianshu.io/assets/web/banner-s-3-7123fd94750759acf7eca05b871e9d17.png"
+            },
+            {
+                "id": 2,
+                "imgUrl": "http://cdn2.jianshu.io/assets/web/banner-s-4-b70da70d679593510ac93a172dfbaeaa.png"
+            },
+            {
+                "id": 3,
+                "imgUrl": "http://cdn2.jianshu.io/assets/web/banner-s-7-1a0222c91694a1f38e610be4bf9669be.png"
+            },
+            {
+                "id": 4,
+                "imgUrl": "http://cdn2.jianshu.io/assets/web/banner-s-5-4ba25cf5041931a0ed2062828b4064cb.png"
+            },
+            {
+                "id": 5,
+                "imgUrl": "http://cdn2.jianshu.io/assets/web/banner-s-6-c4d6335bfd688f2ca1115b42b04c28a7.png"
+            }
+        ]
+    }
+}
+
