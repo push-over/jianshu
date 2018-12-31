@@ -13,9 +13,19 @@ class BackTop extends PureComponent {
     }
 
     render() {
+
+        const { showScroll } = this.props;
+
         return (
             <Fragment>
-                {this.props.showScroll ? <BackTopWrapper onClick={this.handleScrollTop}>顶部</BackTopWrapper> : null}
+                {
+                    showScroll ?
+                        <BackTopWrapper
+                            onClick={this.handleScrollTop}>
+                            <i style={{ "color": "#333" }} className="iconfont">&#xe671;</i>
+                        </BackTopWrapper> :
+                        null
+                }
             </Fragment>
         )
     }

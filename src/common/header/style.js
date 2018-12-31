@@ -49,6 +49,9 @@ export const NavItem = styled.div`
         font-size: 15px;
         float: right;
         color: #969696;
+        .mode-btn {
+            line-height: 53px;
+        }
     }
     &.active {
         color: #ea6f5a;
@@ -147,9 +150,30 @@ export const SearchInfoTitle = styled.div`
 `;
 
 export const SearchInfoSwitch = styled.span`
+    position: relative;
     float: right;
     font-size: 13px;
     cursor: pointer;
+    .iconfont {
+        font-size: 13px;
+        top: -5px;
+        left: -27px;
+        font-weight: 600;
+        position: absolute;
+        transform: rotate(90deg);
+        &.slide-enter {
+            transition: all .3s ease-out;
+        }
+        &.slide-enter-active {
+            transform: rotate(90deg);
+        }
+        &.slide-exit {
+            transition: all .3s ease-out;
+        }
+        &.slide-exit-active {
+            transform: rotate(450deg)
+        }
+    }
 `;
 
 export const SearchInfoList = styled.div`
@@ -181,19 +205,25 @@ export const Addition = styled.div`
 export const Button = styled.div`
     float: right;
     margin-right: 20px;
-    border-radius: 19px;
+    border-radius: 20px;
     font-size: 15px;
     cursor: pointer;
     border: 1px solid transparent;
     text-align: center;
-    line-height: 24px;
+    font-weight: 400
+    vertical-align: middle;
     &.write {
+        line-height: 38px;
         margin-top: 8px;
-        line-height: 36px;
         height: 40px;
         width: 100px;
         color: #fff;
         background: #ea6f5a;
+        .iconfont {
+            vertical-align: middle;
+            font-size: 20px;
+            margin-right: 3px;
+        }
     }
     &.write:hover {
         background-color: #ec6149;

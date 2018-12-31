@@ -100,6 +100,14 @@ export const ListInfo = styled.div `
         margin-right: 10px;
         color: #b4b4b4;
         cursor: pointer;
+        .iconfont {
+            font-size: 13px;
+            margin-right: 3px;
+            vertical-align: middle;
+        }
+    }
+    .comments:hover {
+        color: #787878;
     }
 `;
 
@@ -145,4 +153,15 @@ export const BackTopWrapper = styled.div `
     text-align: center;
     cursor: pointer;
     border: 1px solid #dcdcdc;
+    // &.slide-enter {
+    //     transition: all .3s ease-in;
+    // }
+    // &.slide-enter-active {
+    //     background: red;
+    // }
+    // &.slide-exit {
+    //     transition: all .3s ease-in;
+    // }
+    // &.slide-exit-active {
+    // }
 `;

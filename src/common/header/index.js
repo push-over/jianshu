@@ -25,12 +25,12 @@ class Header extends Component {
         return (
             <HeaderWrapper>
                 <Nav>
-                <Logo />
+                    <Logo />
                     <NavItem className='left active'>首页</NavItem>
                     <NavItem className='left app-download'>下载App</NavItem>
                     <NavItem className='right'>登录</NavItem>
                     <NavItem className='right'>
-                        <i className="iconfont">&#xe636;</i>
+                        <i className="iconfont mode-btn">&#xe685;</i>
                     </NavItem>
                     <SearchWrapper>
                         <CSSTransition
@@ -49,7 +49,7 @@ class Header extends Component {
                     </SearchWrapper>
                     <Addition>
                         <Button className='write'>
-                            <i className="iconfont">&#xe60e;</i>
+                            <i className="iconfont">&#xe68f;</i>
                             写文章
                             </Button>
                         <Button className='sign-up'>注册</Button>
@@ -65,14 +65,14 @@ class Header extends Component {
 
         const newList = list.toJS();
         const pageList = [];
- 
+
         if (newList.length) {
             for (let i = (page - 1) * 10; i < page * 10; i++) {
-                if(newList[i] !== undefined) {
+                if (newList[i] !== undefined) {
                     pageList.push(
                         <SearchInfoItem key={newList[i]}>{newList[i]}</SearchInfoItem>
                     )
-                }              
+                }
             }
         }
 
@@ -84,7 +84,16 @@ class Header extends Component {
                         onMouseLeave={handleMouseLeave}
                     >
                         热门搜索
-                        <SearchInfoSwitch onClick={() => handleChangePage(page, totalPage)}>换一批</SearchInfoSwitch>
+                        <SearchInfoSwitch onClick={() => handleChangePage(page, totalPage)}>
+                            <CSSTransition
+                                in={focused}
+                                timeout={1000}
+                                classNames="slide"
+                            >
+                                <i className="iconfont">&#xe602;</i>
+                            </CSSTransition>
+                            换一批
+                        </SearchInfoSwitch>
                     </SearchInfoTitle>
                     <SearchInfoList>
                         {pageList}
@@ -111,7 +120,7 @@ const mapStateToProps = (state) => {
 const mapDispathToProps = (dispatch) => {
     return {
         handleInputFocus(list) {
-            if(list.size === 0) {
+            if (list.size === 0) {
                 dispatch(actionCreators.getList());
             }
             dispatch(actionCreators.searchFocus());

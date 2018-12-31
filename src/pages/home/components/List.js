@@ -28,8 +28,8 @@ class List extends PureComponent {
                   </p>
                   <div className='meta'>
                     <span className='meta-info'>媒体君</span>
-                    <span className='meta-info'>0</span>
-                    <span className='meta-info'>58</span>
+                    <span className='meta-info comments'><i className="iconfont">&#xe622;</i>0</span>
+                    <span className='meta-info'><i className="iconfont">&#xe604;</i>58</span>
                   </div>
                 </ListInfo>
               </ListItem>
