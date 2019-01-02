@@ -1,9 +1,8 @@
 import React, { PureComponent } from 'react';
 import Banner from './components/Banner';
 import List from './components/List';
-import Topic from './components/Topic';
 import Recommend from './components/Recommend';
-import Writer from './components/Writer';
+import DownloadApp from './components/DownloadApp';
 import BackTop from './components/BackTop';
 import { connect } from 'react-redux';
 import { actionCreators } from './store';
@@ -20,12 +19,11 @@ class Home extends PureComponent {
             <HomeWrapper>
                 <HomeLeft>
                     <Banner />
-                    <Topic />
                     <List />
                 </HomeLeft>
                 <HomeRight>
                     <Recommend />
-                    <Writer />
+                    <DownloadApp />
                 </HomeRight>
                 <BackTop />
             </HomeWrapper>

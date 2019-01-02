@@ -18,7 +18,7 @@ const addHomeList = (result,nextPage) => ({
 export const toggleTopShow = (show) => ({
     type: constants.TOGGLE_TOP_SHOW,
     show
-})
+});
 
 export const getHomeInfo = () => {
     return (dispatch) => {
@@ -28,6 +28,14 @@ export const getHomeInfo = () => {
         })
     }
 };
+
+export const mouseEnter = () => ({
+    type: constants.MOUSE_ENTER
+});
+
+export const mouseLeave = () => ({
+    type: constants.MOUSE_LEAVE
+});
 
 export const getMoreList = (page) => {
     return (dispatch) => {

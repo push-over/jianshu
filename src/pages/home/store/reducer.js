@@ -8,7 +8,8 @@ const defaultState = fromJS({
     articleList: [],
     recommendList: [],
     articlePage: 1,
-    showScroll: false
+    showScroll: false,
+    showDownloadApp: false,
 });
 
 export default (state = defaultState, action) => {
@@ -26,6 +27,10 @@ export default (state = defaultState, action) => {
             });
         case constants.TOGGLE_TOP_SHOW:
             return state.set('showScroll', action.show);
+        case constants.MOUSE_ENTER:
+            return state.set('showDownloadApp', true);
+        case constants.MOUSE_LEAVE:
+            return state.set('showDownloadApp', false);
         default:
             return state;
     }

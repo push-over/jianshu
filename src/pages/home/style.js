@@ -20,32 +20,9 @@ export const HomeRight = styled.div `
     margin-top: 30px;
 `;
 
-export const TopicWrapper = styled.div `
+export const Line = styled.div `
     overflow: hidden;
-    padding: 20px 0 10px 0;
-    margin-left: -18px;
     border-bottom: 1px solid #dcdcdc;
-`;
-
-export const TopicItem = styled.div `
-    float: left;
-    height: 32px;
-    line-height: 32px;
-    padding-right: 10px;
-    background: #f7f7f7;
-    font-size: 14px;
-    color: #000;
-    border: 1px solid #dcdcdc;
-    border-radius: 4px;
-    margin-left: 18px;
-    margin-bottom: 18px;
-    .topic-pic {
-        display: block;
-        float: left;    
-        width: 32px;
-        height: 32px;
-        margin-right: 10px;
-    }
 `;
 
 export const BannerWrapper = styled.div `
@@ -72,6 +49,9 @@ export const ListItem = styled.div `
         height: 100px;
         float: right;
         cursor: pointer;
+    }
+    &.list:first-of-type(1) {
+        border-top: 1px solid #dcdcdc;
     }
 `;
 
@@ -153,15 +133,65 @@ export const BackTopWrapper = styled.div `
     text-align: center;
     cursor: pointer;
     border: 1px solid #dcdcdc;
-    // &.slide-enter {
-    //     transition: all .3s ease-in;
-    // }
-    // &.slide-enter-active {
-    //     background: red;
-    // }
-    // &.slide-exit {
-    //     transition: all .3s ease-in;
-    // }
-    // &.slide-exit-active {
-    // }
+`;
+
+export const DownloadAppWrapper = styled.div `
+    position: relative;
+    margin-top: 9px;
+    margin-bottom: 30px;
+    padding: 10px 22px;
+    width: 100%;
+    border: 1px solid #f0f0f0;
+    border-radius: 6px;
+    background: #fff;
+    box-sizing: border-box;
+    cursor: pointer;
+    img {
+        width: 60px;
+        height: 60px;
+        opacity: 0.85;
+        vertical-align: middle;
+    }
+`;
+
+export const DownloadAppInfo = styled.div `
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 7px;
+    p {
+        margin-bottom: 0;
+    }
+    .title {
+        font-size: 15px;
+        color: #333;
+    }
+`;
+
+export const DownloadAppCode = styled.div `
+    width: 180px;
+    height: 180px;
+    border: 1px solid #dcdcdc;
+    background: #fff;
+    position: absolute;
+    padding: 10px;
+    bottom: 91px;
+    left: 50px;
+    border-radius: 4px;
+    &.download-app:before {
+        content: "";
+        left: 80px;
+        width: 20px;
+        height: 20px;
+        transform: rotate(45deg);
+        bottom: -10px;
+        z-index: 10;
+        position: absolute;
+        background-color: #fff;
+        border-bottom: 1px solid #dcdcdc;
+        border-right: 1px solid #dcdcdc;
+    }
+    img {
+        width: 100%;
+        height: 100%;
+    }
 `;

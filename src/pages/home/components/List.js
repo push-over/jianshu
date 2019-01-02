@@ -5,17 +5,19 @@ import { actionCreators } from '../store';
 import {
   ListItem,
   ListInfo,
-  LoadMore
+  LoadMore,
+  Line
 } from '../style';
 class List extends PureComponent {
   render() {
     const { list, page, getMoreList } = this.props;
     return (
       <Fragment>
+        <Line></Line>
         {
           list.map((item, index) => {
             return (
-              <ListItem key={index}>
+              <ListItem className='list' key={index}>
                 <img
                   className='pic'
                   src={item.get('imgUrl')}
