@@ -13,9 +13,7 @@ export const HeaderWrapper = styled.div`
     box-sizing: border-box;
 `;
 
-export const Logo = styled.a.attrs({
-    href: '/'
-})`
+export const Logo = styled.div`
     position: absolute;
     float: right;
     top: 0;
@@ -34,6 +32,7 @@ export const Nav = styled.div`
     padding-right: 70px;
     box-sizing: border-box;
     position: relative;
+
 `;
 
 export const NavItem = styled.div`
@@ -180,8 +179,7 @@ export const SearchInfoList = styled.div`
     overflow: hidden;
 `;
 
-export const SearchInfoItem = styled.a`
-    display: block;
+export const SearchInfoItem = styled.div`
     line-height: 20px;
     float: left;
     margin-right: 10px;

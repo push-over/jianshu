@@ -4,7 +4,7 @@ import List from './components/List';
 import Recommend from './components/Recommend';
 import DownloadApp from './components/DownloadApp';
 import Author from './components/Author';
-import BackTop from './components/BackTop';
+import Footer from '../../common/footer';
 import { connect } from 'react-redux';
 import { actionCreators } from './store';
 
@@ -27,7 +27,7 @@ class Home extends PureComponent {
                     <DownloadApp />
                     <Author />
                 </HomeRight>
-                <BackTop />
+              <Footer />
             </HomeWrapper>
         )
     }

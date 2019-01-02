@@ -280,6 +280,7 @@ export const AuthorMore = styled.div `
     background-color: #f7f7f7;
     border: 1px solid #dcdcdc;
     border-radius: 4px;
+    cursor: pointer;
     .iconfont {
         vertical-align: middle;
         font-size: 13px;

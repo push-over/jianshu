@@ -20,7 +20,7 @@ export const FooterInfo = styled.div `
     padding-right: 0;
     font-size: 13px;
     color: #969696;
-    width: 70.93333%;
+    width: 626px;
 `;
 
 export const FooterIcp = styled.div `
