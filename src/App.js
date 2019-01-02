@@ -7,6 +7,7 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import Header from './common/header';
 import Home from './pages/home/index';
 import Detail from './pages/home/index';
+import Footer from './common/footer';
 import store from './store';
 
 class App extends Component {
@@ -14,11 +15,12 @@ class App extends Component {
     return (
       <Provider store={store}>
         <Fragment>
-          <Header />
           <BrowserRouter>
             <Fragment>
-                <Route path='/' exact component={Home}></Route>
-                <Route path='/detail' exact component={Detail}></Route>
+              <Header />
+              <Route path='/' exact component={Home}></Route>
+              <Route path='/detail' exact component={Detail}></Route>
+              <Footer />
             </Fragment>
           </BrowserRouter>
         </Fragment>
