@@ -164,6 +164,10 @@ export const DownloadAppInfo = styled.div `
     .title {
         font-size: 15px;
         color: #333;
+        .iconfont {
+            font-weight: bold;
+            vertical-align: middle;
+        }
     }
 `;
 
@@ -193,5 +197,93 @@ export const DownloadAppCode = styled.div `
     img {
         width: 100%;
         height: 100%;
+    }
+`;
+
+export const AuthorWrapper = styled.div `
+    margin-bottom: 20px;
+    padding-top: 0;
+    font-size: 13px;
+    text-align: center;
+    position: relative;
+`;
+
+export const AuthorTitle = styled.div `
+    width: 100%;
+    text-align: left;
+    color: #969696;
+    .page-change {
+        float: right;
+        display: inline-block;
+        cursor: pointer;
+        .iconfont {
+            font-size: 13px;
+            // transform: rotate(90deg);
+            font-weight: 600;
+            margin-right: 5px;
+        }
+    }
+`;
+
+export const AuthorList = styled.ul `
+    margin: 0 0 20px;
+    text-align: left;
+`;
+
+export const AuthorItem = styled.li `
+    margin-top: 15px;
+    line-height: 20px;
+    box-sizing: border-box;
+    img {
+        float: left;
+        width: 48px;
+        height: 48px;
+        margin-right: 10px;
+        cursor: pointer;
+        border-radius: 50%;
+    }
+    p {
+        margin-top: 2px;
+        font-size: 12px;
+        color: #969696;
+        margin: 0 0 10px;
+    }
+    .follow {
+        float: right;
+        margin-top: 5px;
+        color: #42c02e;
+        cursor: pointer;
+        font-weight: 400;
+        line-height: normal;
+        .iconfont {
+            font-size: 13px;
+        }
+    }
+    .name {
+        padding-top: 5px;
+        margin-right: 60px;
+        font-size: 14px;
+        display: block;
+        cursor: pointer;
+        color: #333;
+    }
+`;  
+
+export const AuthorMore = styled.div `
+    position: absolute;
+    text-align: center;
+    padding: 7px 7px 7px 12px;
+    left: 0;
+    width: 100%;
+    font-size: 13px;
+    color: #787878;
+    background-color: #f7f7f7;
+    border: 1px solid #dcdcdc;
+    border-radius: 4px;
+    .iconfont {
+        vertical-align: middle;
+        font-size: 13px;
+        font-weight: 600;
+        margin-left: 5px;
     }
 `;

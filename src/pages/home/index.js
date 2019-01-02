@@ -3,6 +3,7 @@ import Banner from './components/Banner';
 import List from './components/List';
 import Recommend from './components/Recommend';
 import DownloadApp from './components/DownloadApp';
+import Author from './components/Author';
 import BackTop from './components/BackTop';
 import { connect } from 'react-redux';
 import { actionCreators } from './store';
@@ -24,6 +25,7 @@ class Home extends PureComponent {
                 <HomeRight>
                     <Recommend />
                     <DownloadApp />
+                    <Author />
                 </HomeRight>
                 <BackTop />
             </HomeWrapper>

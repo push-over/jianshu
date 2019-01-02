@@ -54,7 +54,6 @@ const mapDispatchToProps = (dispatch) => {
         changeScrollTopShow() {
             if (document.documentElement.scrollTop > 200) {
                 dispatch(actionCreators.toggleTopShow(true));
-
             } else {
                 dispatch(actionCreators.toggleTopShow(false));
             }
