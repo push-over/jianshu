@@ -162,18 +162,6 @@ export const SearchInfoSwitch = styled.span`
         // transform: rotate(90deg);
         transition: all .3s ease-in;
         transform-origin: center;
-        // &.slide-enter {
-        //     transition: all .3s ease-in;
-        // }
-        // &.slide-enter-active {
-        //     transform: rotate(90deg);
-        // }
-        // &.slide-exit {
-        //     transition: all .3s ease-in;
-        // }
-        // &.slide-exit-active {
-        //     transform: rotate(450deg)
-        // }
     }
     &.title:hover {
         color: #333;

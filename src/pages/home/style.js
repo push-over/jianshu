@@ -240,9 +240,17 @@ export const DownloadAppCode = styled.div `
     &.slide-enter {
         transition: all .5s ease-out;
     }
+
+    &.slide-enter-active {
+        transform: rotate(90deg);
+    }
     
     &.slide-exit {
         transition: all .5s ease-out;
+    }
+
+    &.slide-exit-active {
+        transform: rotate(450deg)
     }
 `;
 
@@ -262,12 +270,18 @@ export const AuthorTitle = styled.div `
         float: right;
         display: inline-block;
         cursor: pointer;
+        position: relative;
         .iconfont {
-            font-size: 13px;
-            // transform: rotate(90deg);
-            font-weight: 600;
-            margin-right: 5px;
+            position: absolute;
+            left: -16px;
+            font-size: 12px;
+            transition: all .3s ease-in;
+            transform-origin: center;
+            font-weight: 600; 
         }
+    }
+    .page-change:hover {
+        color: #787878;
     }
 `;
 
@@ -287,6 +301,7 @@ export const AuthorItem = styled.li `
         margin-right: 10px;
         cursor: pointer;
         border-radius: 50%;
+        border: 1px solid #ddd;
     }
     p {
         margin-top: 2px;

@@ -31,7 +31,9 @@ class DownloadApp extends PureComponent {
               timeout={1000}
               classNames="slide"
             >
-              <DownloadAppCode className='download-app'>
+              <DownloadAppCode
+                className='download-app'
+              >
                 <img src='http://cdn2.jianshu.io/assets/web/download-index-side-qrcode-cb13fc9106a478795f8d10f9f632fccf.png' alt='' />
               </DownloadAppCode>
             </CSSTransition> :

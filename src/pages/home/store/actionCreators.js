@@ -6,7 +6,8 @@ const changeHomeData = (result) => ({
     type: constants.CHANGE_HOME_DATA,
     bannerList: result.bannerList,
     articleList: result.articleList,
-    recommendList: result.recommendList
+    recommendList: result.recommendList,
+    authorList: result.authorList
 });
 
 const addHomeList = (result, nextPage) => ({

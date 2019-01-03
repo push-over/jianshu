@@ -7,6 +7,7 @@ const defaultState = fromJS({
     bannerList: [],
     articleList: [],
     recommendList: [],
+    authorList: [],
     articlePage: 1,
     showcarousel: false,
     showScroll: false,
@@ -19,7 +20,8 @@ export default (state = defaultState, action) => {
             return state.merge({
                 'bannerList': fromJS(action.bannerList),
                 'articleList': fromJS(action.articleList),
-                'recommendList': fromJS(action.recommendList)
+                'recommendList': fromJS(action.recommendList),
+                'authorList': fromJS(action.authorList)
             });
         case constants.ADD_HOME_LIST:
             return state.merge({
