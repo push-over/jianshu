@@ -9,7 +9,7 @@ const changeHomeData = (result) => ({
     recommendList: result.recommendList
 });
 
-const addHomeList = (result,nextPage) => ({
+const addHomeList = (result, nextPage) => ({
     type: constants.ADD_HOME_LIST,
     articleList: fromJS(result),
     nextPage
@@ -37,11 +37,19 @@ export const mouseLeave = () => ({
     type: constants.MOUSE_LEAVE
 });
 
+export const bannerMouseEnter = () => ({
+    type: constants.BANNER_MOUSE_ENTER
+});
+
+export const bannerMouseLeave = () => ({
+    type: constants.BANNER_MOUSE_LEAVE
+});
+
 export const getMoreList = (page) => {
     return (dispatch) => {
-        axios.get('/api/homeList.json?page='+ page).then((res) => {
+        axios.get('/api/homeList.json?page=' + page).then((res) => {
             const result = res.data.data;
-            dispatch(addHomeList(result,page + 1));          
+            dispatch(addHomeList(result, page + 1));
         })
     }
 };

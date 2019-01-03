@@ -29,7 +29,11 @@ class Header extends Component {
                     <Link to='/'>
                         <Logo />
                     </Link>
-                    <NavItem className='left active'>首页</NavItem>
+                    <Link to='/'>
+                        <NavItem className='left active'>
+                            首页
+                        </NavItem>
+                    </Link>
                     <NavItem className='left app-download'>下载App</NavItem>
                     <NavItem className='right'>登录</NavItem>
                     <NavItem className='right'>

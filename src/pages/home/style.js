@@ -39,6 +39,35 @@ export const BannerWrapper = styled.div `
     }
 `;
 
+export const BannerDirection = styled.div `
+    position: absolute;
+    height: 50px;
+    width: 100%;
+    top: 110px;
+    left: 0px;
+`;
+
+export const Direction = styled.div `
+    background-color: rgba(0,0,0,.4);
+    height: 50px;
+    width: 40px;
+    line-height: 50px;
+    text-align: center;
+    color: #fff;
+    cursor: pointer;
+    font-size: 12px;
+    &.prev {
+        float: left;
+        border-top-right-radius: 6px;
+        border-bottom-right-radius: 6px;
+    }
+    &.next {
+        float: right;
+        border-top-left-radius: 6px;
+        border-bottom-left-radius: 6px;
+    }
+`;
+
 export const ListItem = styled.div `
     overflow: hidden;
     padding: 20px 0;
@@ -58,6 +87,12 @@ export const ListItem = styled.div `
 export const ListInfo = styled.div `
     width: 460px;
     float: left;
+    a {
+        text-decoration:none;
+    }
+    a:hover {
+        text-decoration:underline;
+    }
     .title {
         font-size: 18px;
         font-weight: bold;
@@ -107,13 +142,14 @@ export const RecommendItem = styled.div `
 `;
 
 export const LoadMore = styled.div `
-    width: 100%;
-    height: 40px;
+    width: 625px;
+    // height: 40px;
     background: #a5a5a5;
     border-radius: 20px;
     margin: 30px auto 60px;
     text-align: center;
     padding: 10px 15px;
+    box-sizing: border-box;
     color: #fff;
     font-size: 15px;
     cursor: pointer;
@@ -158,8 +194,10 @@ export const DownloadAppInfo = styled.div `
     display: inline-block;
     vertical-align: middle;
     margin-left: 7px;
-    p {
-        margin-bottom: 0;
+    div {
+        margin-top: 4px;
+        font-size: 13px;
+        color: #999;
     }
     .title {
         font-size: 15px;
@@ -281,6 +319,8 @@ export const AuthorMore = styled.div `
     border: 1px solid #dcdcdc;
     border-radius: 4px;
     cursor: pointer;
+    box-sizing: border-box;
+    margin-top: 15px;
     .iconfont {
         vertical-align: middle;
         font-size: 13px;

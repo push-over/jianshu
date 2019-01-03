@@ -8,6 +8,7 @@ const defaultState = fromJS({
     articleList: [],
     recommendList: [],
     articlePage: 1,
+    showcarousel: false,
     showScroll: false,
     showDownloadApp: false,
 });
@@ -31,6 +32,10 @@ export default (state = defaultState, action) => {
             return state.set('showDownloadApp', true);
         case constants.MOUSE_LEAVE:
             return state.set('showDownloadApp', false);
+        case constants.BANNER_MOUSE_ENTER:
+            return state.set('showcarousel', true);
+        case constants.BANNER_MOUSE_LEAVE:
+            return state.set('showcarousel', false);
         default:
             return state;
     }
