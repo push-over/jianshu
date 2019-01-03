@@ -20,9 +20,10 @@ export default (state = defaultState, action) => {
             return state.merge({
                 'bannerList': fromJS(action.bannerList),
                 'articleList': fromJS(action.articleList),
-                'recommendList': fromJS(action.recommendList),
-                'authorList': fromJS(action.authorList)
+                'recommendList': fromJS(action.recommendList)
             });
+        case constants.CHANGE_AUTHOR_DATA:
+            return state.set('authorList', fromJS(action.authorList));
         case constants.ADD_HOME_LIST:
             return state.merge({
                 'articleList': state.get('articleList').concat(action.articleList),

@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux';
+import { actionCreators } from '../store';
 import {
     AuthorWrapper,
     AuthorTitle,
@@ -10,12 +11,12 @@ import {
 
 class Author extends PureComponent {
     render() {
-        const { authorList, handleChangePage } = this.props;
+        const { authorList, changeAuthorData } = this.props;
         return (
             <AuthorWrapper>
                 <AuthorTitle>
                     <span className='title'>推荐作者</span>
-                    <span className='page-change' onClick={() => handleChangePage(this.spinIcon)}>
+                    <span className='page-change' onClick={() => changeAuthorData(this.spinIcon)}>
                         <i ref={(icon) => { this.spinIcon = icon }} className="iconfont">&#xe602;</i>
                         换一批
                     </span>
@@ -42,6 +43,10 @@ class Author extends PureComponent {
             </AuthorWrapper>
         )
     }
+
+    componentDidMount() {
+        this.props.changeAuthorData();
+    }
 }
 
 const mapStateToProps = (state) => {
@@ -52,16 +57,19 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        handleChangePage(spin) {
-            let originAngle = spin.style.transform.replace(/[^0-9]/ig,'');
-            if(originAngle) {
-                originAngle = parseInt(originAngle,10);
-            }else {
-                originAngle = 0;
-            }
-            spin.style.transform = 'rotate('+originAngle+360+'deg)';
+        changeAuthorData(spin) {
 
-            console.log(originAngle)
+            if (spin) {
+                let originAngle = spin.style.transform.replace(/[^0-9]/ig, '');
+                if (originAngle) {
+                    originAngle = parseInt(originAngle, 10);
+                } else {
+                    originAngle = 0;
+                }
+                spin.style.transform = 'rotate(' + originAngle + 360 + 'deg)';
+            }
+
+            dispatch(actionCreators.getAuthorInfo());
         }
     }
 }

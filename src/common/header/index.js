@@ -101,13 +101,7 @@ class Header extends Component {
                             className='title'
                             onClick={() => handleChangePage(page, totalPage,this.spinIcon)}
                         >
-                            {/* <CSSTransition
-                                in={focused}  
-                                timeout={1000}  
-                                classNames="slide"  
-                            > */}
-                                <i ref={(icon) => {this.spinIcon = icon}} className="iconfont">&#xe602;</i>
-                            {/* </CSSTransition> */}
+                            <i ref={(icon) => {this.spinIcon = icon}} className="iconfont">&#xe602;</i>
                             换一批
                         </SearchInfoSwitch>
                     </SearchInfoTitle>

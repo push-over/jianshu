@@ -47,42 +47,6 @@
                 "id": 5,
                 "imgUrl": "http://cdn2.jianshu.io/assets/web/banner-s-6-c4d6335bfd688f2ca1115b42b04c28a7.png"
             }
-        ],
-        "authorList": [{
-                "id": 1,
-                "avatar": "//upload.jianshu.io/users/upload_avatars/7663825/7c28763e-002b-4e89-8dea-5b8da210ef2c.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp",
-                "name": "名贵的考拉熊",
-                "like": "1.4k",
-                "word_number": "235k"
-            },
-            {
-                "id": 2,
-                "avatar": "//upload.jianshu.io/users/upload_avatars/10849033/a3e12f47-c81c-4659-9c80-117f8b337408.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp",
-                "name": "王小麦",
-                "like": "1.4k",
-                "word_number": "235k"
-            },
-            {
-                "id": 3,
-                "avatar": "//upload.jianshu.io/users/upload_avatars/4263857/34d7b217-7338-48fe-81a1-98367fecdbee.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp",
-                "name": "没文化的野狐狸",
-                "like": "1.4k",
-                "word_number": "235k"
-            },
-            {
-                "id": 4,
-                "avatar": "//upload.jianshu.io/users/upload_avatars/2631077/dc99c361412c?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp",
-                "name": "老沈",
-                "like": "1.4k",
-                "word_number": "235k"
-            },
-            {
-                "id": 5,
-                "avatar": "//upload.jianshu.io/users/upload_avatars/7416466/fc1a1a0d-e3c7-4bca-9720-028c5c9914f3.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp",
-                "name": "穆青林",
-                "like": "1.4k",
-                "word_number": "235k"
-            }
         ]
     }
 }

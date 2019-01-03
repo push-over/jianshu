@@ -7,7 +7,11 @@ const changeHomeData = (result) => ({
     bannerList: result.bannerList,
     articleList: result.articleList,
     recommendList: result.recommendList,
-    authorList: result.authorList
+});
+
+const changeAuthorData = (result) => ({
+    type: constants.CHANGE_AUTHOR_DATA,
+    authorList: result
 });
 
 const addHomeList = (result, nextPage) => ({
@@ -20,15 +24,6 @@ export const toggleTopShow = (show) => ({
     type: constants.TOGGLE_TOP_SHOW,
     show
 });
-
-export const getHomeInfo = () => {
-    return (dispatch) => {
-        axios.get('/api/home.json').then((res) => {
-            const result = res.data.data;
-            dispatch(changeHomeData(result));
-        })
-    }
-};
 
 export const mouseEnter = () => ({
     type: constants.MOUSE_ENTER
@@ -46,6 +41,15 @@ export const bannerMouseLeave = () => ({
     type: constants.BANNER_MOUSE_LEAVE
 });
 
+export const getHomeInfo = () => {
+    return (dispatch) => {
+        axios.get('/api/home.json').then((res) => {
+            const result = res.data.data;
+            dispatch(changeHomeData(result));
+        })
+    }
+};
+
 export const getMoreList = (page) => {
     return (dispatch) => {
         axios.get('/api/homeList.json?page=' + page).then((res) => {
@@ -54,3 +58,12 @@ export const getMoreList = (page) => {
         })
     }
 };
+
+export const getAuthorInfo = () => {
+    return (dispatch) => {
+        axios.get('/api/author.json').then((res) => {
+            const result = res.data.data;
+            dispatch(changeAuthorData(result));
+        })
+    }
+}

@@ -6,7 +6,8 @@ import Tooltip from 'antd/lib/tooltip';
 import 'antd/lib/back-top/style/index.css';
 import 'antd/lib/tooltip/style/index.css';
 import {
-    BackTopWrapper
+    BackTopWrapper,
+    BackTopBox
 } from '../style';
 
 class BackTop extends PureComponent {
@@ -24,11 +25,13 @@ class BackTop extends PureComponent {
                 {
                     showScroll ?
                         <BackTops>
-                            <Tooltip placement="left" title={text} >
+                            <BackTopBox>
+                            <Tooltip placement="left" title={text}>
                                 <BackTopWrapper>
                                     <i style={{ "color": "#333" }} className="iconfont">&#xe671;</i>
                                 </BackTopWrapper>
                             </Tooltip>
+                            </BackTopBox>
                         </BackTops> :
                         null
                 }
