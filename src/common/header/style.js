@@ -154,23 +154,31 @@ export const SearchInfoSwitch = styled.span`
     font-size: 13px;
     cursor: pointer;
     .iconfont {
-        font-size: 13px;
+        font-size: 12px;
         top: -5px;
         left: -27px;
         font-weight: 600;
         position: absolute;
-        transform: rotate(90deg);
-        &.slide-enter {
-            transition: all .3s ease-out;
-        }
-        &.slide-enter-active {
-            transform: rotate(90deg);
-        }
-        &.slide-exit {
-            transition: all .3s ease-out;
-        }
-        &.slide-exit-active {
-            transform: rotate(450deg)
+        // transform: rotate(90deg);
+        transition: all .3s ease-in;
+        transform-origin: center;
+        // &.slide-enter {
+        //     transition: all .3s ease-in;
+        // }
+        // &.slide-enter-active {
+        //     transform: rotate(90deg);
+        // }
+        // &.slide-exit {
+        //     transition: all .3s ease-in;
+        // }
+        // &.slide-exit-active {
+        //     transform: rotate(450deg)
+        // }
+    }
+    &.title:hover {
+        color: #333;
+        .iconfont {
+            color: #333;
         }
     }
 `;

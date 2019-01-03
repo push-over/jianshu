@@ -236,6 +236,14 @@ export const DownloadAppCode = styled.div `
         width: 100%;
         height: 100%;
     }
+
+    &.slide-enter {
+        transition: all .5s ease-out;
+    }
+    
+    &.slide-exit {
+        transition: all .5s ease-out;
+    }
 `;
 
 export const AuthorWrapper = styled.div `

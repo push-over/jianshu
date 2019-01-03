@@ -21,6 +21,12 @@ import {
 } from './style';
 
 class Header extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            tt: 90
+        }
+    }
     render() {
         const { focused, list, handleInputFocus, handleInputBlur } = this.props;
         return (
@@ -91,14 +97,17 @@ class Header extends Component {
                         onMouseLeave={handleMouseLeave}
                     >
                         热门搜索
-                        <SearchInfoSwitch onClick={() => handleChangePage(page, totalPage)}>
-                            <CSSTransition
-                                in={focused}
-                                timeout={1000}
-                                classNames="slide"
-                            >
-                                <i className="iconfont">&#xe602;</i>
-                            </CSSTransition>
+                        <SearchInfoSwitch
+                            className='title'
+                            onClick={() => handleChangePage(page, totalPage,this.spinIcon)}
+                        >
+                            {/* <CSSTransition
+                                in={focused}  
+                                timeout={1000}  
+                                classNames="slide"  
+                            > */}
+                                <i ref={(icon) => {this.spinIcon = icon}} className="iconfont">&#xe602;</i>
+                            {/* </CSSTransition> */}
                             换一批
                         </SearchInfoSwitch>
                     </SearchInfoTitle>
@@ -145,7 +154,14 @@ const mapDispathToProps = (dispatch) => {
             dispatch(actionCreators.mounseLeave());
         },
 
-        handleChangePage(page, totalPage) {
+        handleChangePage(page, totalPage,spin) {
+            let originAngle = spin.style.transform.replace(/[^0-9]/ig,'');
+            if(originAngle) {
+                originAngle = parseInt(originAngle,10);
+            }else {
+                originAngle = 0;
+            }
+            spin.style.transform = 'rotate('+originAngle+360+'deg)';
             if (page < totalPage) {
                 dispatch(actionCreators.changePage(page + 1));
             } else {
