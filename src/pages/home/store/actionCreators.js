@@ -11,7 +11,7 @@ const changeHomeData = (result) => ({
 
 const changeAuthorData = (result) => ({
     type: constants.CHANGE_AUTHOR_DATA,
-    authorList: result
+    authorList: fromJS(result)
 });
 
 const addHomeList = (result, nextPage) => ({

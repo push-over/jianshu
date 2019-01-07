@@ -1,4 +1,6 @@
 import React, { PureComponent } from 'react';
+import { connect } from 'react-redux';
+import { actionCreators } from './store';
 
 import {
   DetailWrapper,
@@ -18,35 +20,38 @@ import {
 
 class Detail extends PureComponent {
   render() {
+    const { detailData } = this.props;
+    
     return (
       <DetailWrapper>
         {/* 文章详情 */}
         <DetailTitle>
-          杨超越获2018年度演艺人物，她演了啥？ 一条锦鲤吗？
+          {detailData.title}
         </DetailTitle>
 
         {/* 文章作者信息 */}
         <DetailAuthor>
-          <img className='avatar' src='//upload.jianshu.io/users/upload_avatars/147245/f6d3f69dec9e.jpeg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96' alt='' />
+          <img className='avatar' src={detailData.author_avatar} alt='' />
           <DetailAuthorInfo>
-            <span className='name'>凌千一</span>
+            <span className='name'>{detailData.author_name}</span>
             <span className='follow'><i className="iconfont">&#xe606;</i>关注</span>
             <DetailAuthorMeta>
-              <span>2018.12.21 17:59</span>&nbsp;&nbsp;
-                <span>字数 2607</span>&nbsp;&nbsp;
-                <span>阅读 1607</span>&nbsp;&nbsp;
-                <span>评论 4</span>&nbsp;&nbsp;
-                <span>喜欢 17</span>
+              <span>{detailData.created_at}</span>&nbsp;&nbsp;
+                <span>字数 {detailData.wordage}</span>&nbsp;&nbsp;
+                <span>阅读 {detailData.views_count}</span>&nbsp;&nbsp;
+                <span>评论 {detailData.comments_count}</span>&nbsp;&nbsp;
+                <span>喜欢 {detailData.likes_count}</span>
             </DetailAuthorMeta>
           </DetailAuthorInfo>
         </DetailAuthor>
 
         {/* 文章内容 */}
         <DetailContent>
-          <img src='//upload-images.jianshu.io/upload_images/147245-e4ded9411586fcbe.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/600/format/webp' alt='' />
+          {/* <img src='//upload-images.jianshu.io/upload_images/147245-e4ded9411586fcbe.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/600/format/webp' alt='' />
           <p>杨超越的火，绝对是娱乐圈的一大玄学，在2018年还剩下最后十天的时候，比“杨超越火”更玄的事情出现了，那就是——杨超越被《中国新闻周刊》评为“2018影响中国年度人物”。</p>
           <img src='//upload-images.jianshu.io/upload_images/147245-5cf552a03ea02faa?imageMogr2/auto-orient/strip%7CimageView2/2/w/588/format/webp' alt='' />
-          <p>故宫博物院院长单霁翔被评为“年度文化人物”，中国乒乓球协会主席刘国梁被评为“年度体育人物”，《我不是药神》导演文牧野被评为“年度导演”，还有火箭少女101成员杨超越被评为“年度演艺人物”。</p>
+          <p>故宫博物院院长单霁翔被评为“年度文化人物”，中国乒乓球协会主席刘国梁被评为“年度体育人物”，《我不是药神》导演文牧野被评为“年度导演”，还有火箭少女101成员杨超越被评为“年度演艺人物”。</p> */}
+          {detailData.content}
         </DetailContent>
 
         {/* 赞赏支持 */}
@@ -66,21 +71,39 @@ class Detail extends PureComponent {
         {/* 文章底部作者信息 */}
         <FollowDetail>
           <FollowInfo>
-            <img className="avatar" src='//upload.jianshu.io/users/upload_avatars/4041074/79878f31-c8ae-4087-880c-bc2185837f1d.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96' alt=''/>
+            <img className="avatar" src={detailData.author_avatar} alt=''/>
             <span className="success">
               <i className="iconfont">&#xe606;</i>
               关注
             </span>
-            <span className="title">ywyan</span>
+            <span className="title">{detailData.author_name}</span>
             <p>写了 113086 字，被 162 人关注，获得了 329 个喜欢</p>
           </FollowInfo>
           <Signature>
-          天道酬勤，思者常新；博观约取，厚积薄发；心如止水，气贯长虹；淡漠明志，宁静致远。微信公众号：“前端技术博文”，欢迎关注！
+            {detailData.author_description}
           </Signature>
         </FollowDetail>
       </DetailWrapper>
     )
   }
+
+  componentDidMount() {
+    this.props.changeDetailData();
+  }
 }
 
-export default Detail;
+const mapStateToProps = (state) => {
+  return {
+    detailData: state.getIn(['detail', 'detailData'])
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    changeDetailData() {
+      dispatch(actionCreators.getDetailInfo());
+    }
+  }
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(Detail);

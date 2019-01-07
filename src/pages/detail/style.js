@@ -42,7 +42,7 @@ export const DetailAuthorInfo = styled.div `
     }
     .follow {
         display: inline-block;
-        padding: 0 7px 0 5px;
+        padding: 4px 7px 3px 5px;
         font-size: 12px;    
         font-weight: 400;
         text-align: center;
