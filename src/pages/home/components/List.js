@@ -1,6 +1,7 @@
 import React, { PureComponent, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { actionCreators } from '../store';
+import { actionCreators as detailActionCreators } from '../../detail/store';
 import { Link } from 'react-router-dom';
 
 import {
@@ -11,7 +12,7 @@ import {
 } from '../style';
 class List extends PureComponent {
   render() {
-    const { list, page, getMoreList } = this.props;
+    const { list, page, getMoreList, changeDetailData } = this.props;
     return (
       <Fragment>
         <Line></Line>
@@ -27,7 +28,14 @@ class List extends PureComponent {
                   />
                 </Link>
                 <ListInfo>
-                  <Link to='/detail'><h3 className='title'>{item.get('title')}</h3></Link>
+                  <Link to={'/detail/' + item.get('id')}>
+                    <h3 
+                      className='title'
+                      onClick={() => changeDetailData(item.get('id'))}
+                    >
+                      {item.get('title')}
+                    </h3>
+                  </Link>
                   <p className='desc'>
                     {item.get('desc')}
                   </p>
@@ -63,6 +71,10 @@ const mapDispatchToProps = (dispatch) => {
   return {
     getMoreList(page) {
       dispatch(actionCreators.getMoreList(page));
+    },
+
+    changeDetailData(detailId) {
+      dispatch(detailActionCreators.getDetailInfo(detailId));
     }
   }
 }

@@ -4,7 +4,7 @@ import {
 } from 'immutable';
 
 const defaultState = fromJS({
-    detailData: []
+    detailData: {}
 });
 
 export default (state = defaultState, action) => {
