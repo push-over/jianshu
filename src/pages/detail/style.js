@@ -174,14 +174,15 @@ export const DetailContent = styled.div `
         overflow: auto;
 
         code {
-            color: #abb2bf;
             background: #282c34
         }
     }
+
     pre code 
     {           
         font-family: Menlo,Monaco,Consolas,Courier New,monospace;
     }
+
     blockquote { /*引用块*/
       display: block;
       padding: 15px 1rem;
@@ -230,18 +231,7 @@ export const DetailContent = styled.div `
       border-top: 1px dashed #A5A5A5;
     }
     
-    code /*行内代码*/
-    {   
-        padding: 2px 4px;
-        background-color: #f6f6f6;
-        border: none;
-        color: #c7254e;
-        border-radius: 4px;
-        font-size: 13px;
-        white-space: pre-wrap;
-        vertical-align: middle;
-        word-wrap: break-word;
-    }
+    
     img
     {
       display: block;

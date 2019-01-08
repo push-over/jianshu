@@ -2,8 +2,8 @@ import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import { actionCreators } from './store';
 import ReactMarkdown from 'react-markdown';
-// import SyntaxHighlighter from 'react-syntax-highlighter';
-// import { docco } from 'react-syntax-highlighter/dist/styles/hljs';
+import hljs from 'highlight.js';
+import 'highlight.js/styles/github.css';
 
 import {
   DetailWrapper,
@@ -52,16 +52,9 @@ class Detail extends PureComponent {
 
         {/* 文章内容 */}
         <DetailContent>
-        
-        {/* <SyntaxHighlighter  style={docco} language='javascript'>
-        
-        </SyntaxHighlighter> */}
-
-        <ReactMarkdown source={data.get('content') } 
-          escapeHtml={false}
-          renderers={{ code: ({ value }) => <ReactMarkdown source={value} />}}/>
-          >
-    
+          <ReactMarkdown source={data.get('content') } 
+            escapeHtml={false}
+            renderers={{ code: ({ value }) => <ReactMarkdown source={value} />}}/>   
         </DetailContent>
 
         {/* 赞赏支持 */}
@@ -99,6 +92,7 @@ class Detail extends PureComponent {
 
   componentDidMount() {
     this.props.changeDetailData(this.props.match.params.id);
+    hljs.initHighlightingOnLoad();
   }
 }
 
