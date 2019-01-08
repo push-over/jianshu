@@ -1,7 +1,9 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import { actionCreators } from './store';
-import Markdown from 'react-markdown';
+import ReactMarkdown from 'react-markdown';
+// import SyntaxHighlighter from 'react-syntax-highlighter';
+// import { docco } from 'react-syntax-highlighter/dist/styles/hljs';
 
 import {
   DetailWrapper,
@@ -19,43 +21,12 @@ import {
   Signature
 } from './style';
 
+
 class Detail extends PureComponent {
   render() {
-    const { data } = this.props;
-    const initialSource = `
-    # Live demo
-    Changes are automatically rendered as you type.
-    * Implements [GitHub Flavored Markdown](https://github.github.com/gfm/)
-    * Renders actual, "native" React DOM elements
-    * Allows you to escape or skip HTML (try toggling the checkboxes above)
-    * If you escape or skip the HTML, no \`dangerouslySetInnerHTML\` is used! Yay!
-    ## HTML block below
-    <blockquote>
-      This blockquote will change based on the HTML settings above.
-    </blockquote>
-    ## How about some code?
-    \`\`\`js
-    var React = require('react');
-    var Markdown = require('react-markdown');
-    React.render(
-      <Markdown source="# Your markdown here" />,
-      document.getElementById('content')
-    );
-    \`\`\`
-    Pretty neat, eh?
-    ## Tables?
-    | Feature   | Support |
-    | --------- | ------- |
-    | tables    | ✔ |
-    | alignment | ✔ |
-    | wewt      | ✔ |
-    ## More info?
-    Read usage information and more on [GitHub](//github.com/rexxars/react-markdown)
-    ---------------
-    A component by [Espen Hovlandsdal](https://espen.codes/)
-    `;
-    console.log(initialSource)
 
+    const { data } = this.props;
+    
     return (
       <DetailWrapper>
         {/* 文章详情 */}
@@ -80,13 +51,17 @@ class Detail extends PureComponent {
         </DetailAuthor>
 
         {/* 文章内容 */}
-        <DetailContent dangerouslySetInnerHTML={{ __html: data.get('content') }}>
-        {/* dangerouslySetInnerHTML={{ __html: data.get('content') }} */}
-          {/* <img src='//upload-images.jianshu.io/upload_images/147245-e4ded9411586fcbe.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/600/format/webp' alt='' />
-          <p>杨超越的火，绝对是娱乐圈的一大玄学，在2018年还剩下最后十天的时候，比“杨超越火”更玄的事情出现了，那就是——杨超越被《中国新闻周刊》评为“2018影响中国年度人物”。</p>
-          <img src='//upload-images.jianshu.io/upload_images/147245-5cf552a03ea02faa?imageMogr2/auto-orient/strip%7CimageView2/2/w/588/format/webp' alt='' />
-          <p>故宫博物院院长单霁翔被评为“年度文化人物”，中国乒乓球协会主席刘国梁被评为“年度体育人物”，《我不是药神》导演文牧野被评为“年度导演”，还有火箭少女101成员杨超越被评为“年度演艺人物”。</p> */}
-          {/* <Markdown source={initialSource}/> */}
+        <DetailContent>
+        
+        {/* <SyntaxHighlighter  style={docco} language='javascript'>
+        
+        </SyntaxHighlighter> */}
+
+        <ReactMarkdown source={data.get('content') } 
+          escapeHtml={false}
+          renderers={{ code: ({ value }) => <ReactMarkdown source={value} />}}/>
+          >
+    
         </DetailContent>
 
         {/* 赞赏支持 */}
@@ -106,7 +81,7 @@ class Detail extends PureComponent {
         {/* 文章底部作者信息 */}
         <FollowDetail>
           <FollowInfo>
-            <img className="avatar" src={data.get('author_avatar')} alt=''/>
+            <img className="avatar" src={data.get('author_avatar')} alt='' />
             <span className="success">
               <i className="iconfont">&#xe606;</i>
               关注
@@ -141,4 +116,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(mapStateToProps,mapDispatchToProps)(Detail);
+export default connect(mapStateToProps, mapDispatchToProps)(Detail);
