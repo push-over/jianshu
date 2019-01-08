@@ -36,12 +36,12 @@ class Header extends Component {
                         <Logo />
                     </Link>
                     <Link to='/'>
-                        <NavItem className='left active'>
-                            首页
-                        </NavItem>
+                        <NavItem className='left active'>首页</NavItem>
                     </Link>
                     <NavItem className='left app-download'>下载App</NavItem>
-                    <NavItem className='right'>登录</NavItem>
+                    <Link to='/sign_in'>
+                        <NavItem className='right' >登录</NavItem>
+                    </Link>
                     <NavItem className='right'>
                         <i className="iconfont mode-btn">&#xe685;</i>
                     </NavItem>
@@ -65,7 +65,9 @@ class Header extends Component {
                             <i className="iconfont">&#xe68f;</i>
                             写文章
                             </Button>
-                        <Button className='sign-up'>注册</Button>
+                        <Link to="/sign_up">
+                            <Button className='sign-up'>注册</Button>
+                        </Link>
                     </Addition>
                 </Nav>
             </HeaderWrapper>
