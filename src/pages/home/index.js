@@ -1,4 +1,5 @@
-import React, { PureComponent } from 'react';
+import React, { PureComponent, Fragment } from 'react';
+import Header from '../../common/header/index';
 import Banner from './components/Banner';
 import List from './components/List';
 import Recommend from './components/Recommend';
@@ -17,18 +18,21 @@ import {
 class Home extends PureComponent {
     render() {
         return (
-            <HomeWrapper>
-                <HomeLeft>
-                    <Banner />
-                    <List />
-                </HomeLeft>
-                <HomeRight>
-                    <Recommend />
-                    <DownloadApp />
-                    <Author />
-                </HomeRight>
-              <Footer />
-            </HomeWrapper>
+            <Fragment>
+                <Header />
+                <HomeWrapper>
+                    <HomeLeft>
+                        <Banner />
+                        <List />
+                    </HomeLeft>
+                    <HomeRight>
+                        <Recommend />
+                        <DownloadApp />
+                        <Author />
+                    </HomeRight>
+                <Footer />
+                </HomeWrapper>
+            </Fragment>
         )
     }
 

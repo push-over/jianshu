@@ -30,47 +30,48 @@ class Header extends Component {
     render() {
         const { focused, list, handleInputFocus, handleInputBlur } = this.props;
         return (
-            <HeaderWrapper>
-                <Nav>
-                    <Link to='/'>
-                        <Logo />
-                    </Link>
-                    <Link to='/'>
-                        <NavItem className='left active'>首页</NavItem>
-                    </Link>
-                    <NavItem className='left app-download'>下载App</NavItem>
-                    <Link to='/sign_in'>
-                        <NavItem className='right' >登录</NavItem>
-                    </Link>
-                    <NavItem className='right'>
-                        <i className="iconfont mode-btn">&#xe685;</i>
-                    </NavItem>
-                    <SearchWrapper>
-                        <CSSTransition
-                            in={focused}
-                            timeout={1000}
-                            classNames="slide"
-                        >
-                            <NavSearch
-                                className={focused ? 'focused' : ''}
-                                onFocus={() => handleInputFocus(list)}
-                                onBlur={handleInputBlur}
-                            />
-                        </CSSTransition>
-                        <i className={focused ? 'focused iconfont' : 'iconfont'}>&#xe61d;</i>
-                        {this.getListArea()}
-                    </SearchWrapper>
-                    <Addition>
-                        <Button className='write'>
-                            <i className="iconfont">&#xe68f;</i>
-                            写文章
-                            </Button>
-                        <Link to="/sign_up">
-                            <Button className='sign-up'>注册</Button>
+
+                <HeaderWrapper>
+                    <Nav>
+                        <Link to='/'>
+                            <Logo />
                         </Link>
-                    </Addition>
-                </Nav>
-            </HeaderWrapper>
+                        <Link to='/'>
+                            <NavItem className='left active'>首页</NavItem>
+                        </Link>
+                        <NavItem className='left app-download'>下载App</NavItem>
+                        <Link to='/sign_in'>
+                            <NavItem className='right' >登录</NavItem>
+                        </Link>
+                        <NavItem className='right'>
+                            <i className="iconfont mode-btn">&#xe685;</i>
+                        </NavItem>
+                        <SearchWrapper>
+                            <CSSTransition
+                                in={focused}
+                                timeout={1000}
+                                classNames="slide"
+                            >
+                                <NavSearch
+                                    className={focused ? 'focused' : ''}
+                                    onFocus={() => handleInputFocus(list)}
+                                    onBlur={handleInputBlur}
+                                />
+                            </CSSTransition>
+                            <i className={focused ? 'focused iconfont' : 'iconfont'}>&#xe61d;</i>
+                            {this.getListArea()}
+                        </SearchWrapper>
+                        <Addition>
+                            <Button className='write'>
+                                <i className="iconfont">&#xe68f;</i>
+                                写文章
+                                </Button>
+                            <Link to="/sign_up">
+                                <Button className='sign-up'>注册</Button>
+                            </Link>
+                        </Addition>
+                    </Nav>
+                </HeaderWrapper>
         )
     }
 

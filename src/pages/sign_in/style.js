@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const SignInWrapper = styled.div `
-    margin-top: 55px;
     height: 100%;
     min-height: 750px;
     text-align: center;
